@@ -19,6 +19,11 @@
 // attributes = {
 //     className: "element",
 //     id: "first"
+//     style: {
+//      fontSize:"30px", 
+//      backgroundColor: "orange", 
+//      color: "white"
+//      }
 // }
 
 // element = {
@@ -27,21 +32,37 @@
 //     className: "element",
 //     id: "first"
 // }
-
-function easy(tag, attributes, children) {
+const React = {                                                     //React is a library of JS.
+    createElement: function(tag, attributes, children) {            //React is nothing but an Object of JS.
 
     const element = document.createElement(tag);
     element.textContent = children;
 
     for(const key in attributes) {
-        element[key] = attributes[key]
+        if(key === 'style'){
+            Object.assign(element.style, attributes.style);         //When we have to copy properties of one object into Another
+        }
+        else{
+            element[key] = attributes[key];
+        }
+        //element[key] = attributes[key]                    Style is the read only property. And wo aise assign nahi hota hai
     }
     return element;
 }
-const element1 = easy("h1", {className: "element", id: "first"}, "Hello Coder Army");
-const element2 = easy("h2", {className: "element", id: "second"}, "Yeah! Buddy😉");
+}
+
+const ReactDOM = {
+    render: function(child, parent) {
+        parent.append(child);
+
+    }
+}
+const element1 = React.createElement("h1", {className: "element", id: "first",style: {fontSize:"30px", backgroundColor: "orange", color: "white"}}, "Hello Coder Army");
+const element2 = React.createElement("h2", {className: "element", id: "second",style: {fontSize:"20px", backgroundColor: "pink", color: "green"}}, "Yeah! Buddy😉");
 
 
 const root = document.getElementById("root");
-root.append(element1);
-root.append(element2);
+// root.append(element1);
+// root.append(element2);
+ReactDOM.render(element1, root);
+ReactDOM.render(element2, root);
