@@ -77,7 +77,48 @@
 // root.render(div);
 
 
-const element = React.createElement("h1", {id: "ooh"}, "Hello Coder Army!");
+//JSX = JavaScript XML
+//JSX--> React.createElement()
+//const element = React.createElement("h1", {id: "ooh"}, "Hello Coder Army!"); --> Isi format mai babel convert kar dega niche wale code ko
+// const element = React.createElement("h1", {id: "ooh"}, "Hello Coder Army!");
+
+const element = <h1 id = "ooh">Hello Coder Army!</h1>;
+
+const element2 = (<div>                              //Both h1 and h2 are stored under 'div' as only one among h1 and h2 can be there in element2.
+    <h1>Hey! yooo</h1>                               //Brackets use karna is a good habit
+    <h2>Dragon God Orsted!</h2>
+</div>);
+
+// const element2 = React.createElement("div", null, 
+//     React.createElement("h1", null, "Hey! yooo"),
+//     React.createElement("h2", null, "Dragon God Orsted!"))               //Representation of above
+
+//ReacT component is nothing but a React function where its first letter(name of function) should be capital
+//It should return JSX
+
+function App(name) {
+    return <h1>Hello Coder Armyyyy with {name}</h1>                 //JSX Code
+}
+
+//const a = App("AMAN");
+//text/element : JavaScript ka expression iske andar {} likh sakte hai
+//Number,String,true,false,null,undefined,array,object
+
+//Number,String,Array mast chalega
+//true,false,null,undefined render to ho jayega but chalega nahi
+//Object to kuchh v nahi hoga. Sidhe ERROR throw karega
+
+const age = 10;
+const isLoggedIn = false;
+const random = <h2>Hello My Brothaas. My age is {age}</h2>
+const random1 = <h3>Money follows my Brothaaaa. Money Follows{isLoggedIn?<h2>LOGGED IN</h2>:<h2>NOT LOGGED IN</h2>}</h3>;
 const root  = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(element);
+root.render(App("Aman"));
+root.render(random);
+root.render(random1);
+// root.render(<App/>);                 This and above are same.
+                        
+
+// root.render(element);
+// root.render(element2);
