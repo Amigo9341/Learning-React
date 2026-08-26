@@ -112,12 +112,75 @@ const age = 10;
 const isLoggedIn = false;
 const random = <h2>Hello My Brothaas. My age is {age}</h2>
 const random1 = <h3>Money follows my Brothaaaa. Money Follows{isLoggedIn?<h2>LOGGED IN</h2>:<h2>NOT LOGGED IN</h2>}</h3>;
+
+
+const courses = ["HTML","CSS","JAVASCRIPT","REACT"];
+const newArray = (
+    <ul>
+    {courses.map(abc=><li>{abc}</li>)}
+    </ul>
+    )                                           //Upar wala method is how it should be written. Niche wala is the basic method to write for an Array.
+// const newArray = (
+//     <ul>
+//         <li>HTML</li>
+//         <li>CSS</li>
+//         <li>JAVASCRIPT</li>
+//         <li>REACT</li>
+//     </ul>
+// )
+
+function Now(props) {           //yaha pe props parameter catch karega niche wale name and age ko 
+    return <h1>Hola Madridistas!! {props.name} {props.age}</h1>
+}
+
+// {name:"Amigo
+//     age:25"}         aise wrap ho jayega
+
+const b = <Now name = "Amigo" age = {25} ></Now>             //Aise v call ho skta hai function. Isme basically sikhe hai ki iss format mai parameters kaise add kar sakte hai
+//Parameter wala string doesnt require here {} but int does.
+
+const ab = {color: "blue", backgroundColor: "orange"};
+const ayayo = <h2 id = "title" className="first" style={ab}>This is your chance Mannn</h2>
+
+function Header(props) {
+    return(
+    <h1>Welcome to THE INDIAN ELECTION COMMISSION {props.name}</h1>)
+}
+function Main({user}) {
+    return(
+    <>
+    <h2>Hey {user.name}</h2>
+    <h3>Great that u have arrived from {user.city} to Vote</h3>
+    <p>{user.name} can only vote if his age more than 18.</p>
+    <p>{user.age>= 18 ? "You can Vote" : "You can't Vote."}</p>
+    </>)
+}
+function Footer() {
+    return(
+    <h3>You have reached the end of your Page</h3>)
+}
+
+function Executor() {
+    return(
+    <>              
+    <Header id = "here" name = "Aman" ></Header>           //can also be closed directly
+    <Main user ={{name: "Ravish", city:"Patna", age:"29"}}></Main>
+    <Footer></Footer>
+    </>)    //Can use this 'Fragmented' instead of 'div'. Fragment is a React thing
+}
+
 const root  = ReactDOM.createRoot(document.getElementById("root"));
 
+
 root.render(App("Aman"));
+// root.render(<App/>);                 This and above are same.
 root.render(random);
 root.render(random1);
-// root.render(<App/>);                 This and above are same.
+root.render(newArray);
+root.render(b);
+root.render(ayayo);
+root.render(<Executor/>);
+
                         
 
 // root.render(element);
