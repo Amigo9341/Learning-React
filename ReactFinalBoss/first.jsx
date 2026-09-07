@@ -11,5 +11,5 @@ createRoot(document.getElementById('root')).render(
     <App/>
 )
 
-//Here, App is the export default function. So, it is not written in curly braces.
-//Rohit and Mohit are 
+//Here, App is the export default function. So, it is not written in curly {} braces.
+//Rohit and Mohit are named export functions and should always ne imported in Curly Braces {}.
