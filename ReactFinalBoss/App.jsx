@@ -8,6 +8,12 @@ export function Rohit(){
 }
 
 
+//Named Export
+export function Mohit(){
+    return <h2>Bruce's fear were Bats</h2>
+}
+
+
 
 
 //There can only be one Default Export
