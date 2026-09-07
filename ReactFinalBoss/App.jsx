@@ -11,3 +11,4 @@ export function Rohit(){
 
 
 //There can only be one Default Export
+//The others will be Named Exports
