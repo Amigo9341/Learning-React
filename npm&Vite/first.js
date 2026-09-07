@@ -14,5 +14,9 @@
 
 // Suppose 19.2.3 is there in Vite or React. Here, 19 is major, 2 is minor, and 3 is patch. If patch is changed say 3 into 4, it means that that there was some bug which was fixed.
 //If some new feature or a new function has been added, the minor will be changed from 2 to 3.  
+//When the minor changes it will be like 19.3.0 (minor becomes 0).
 
+//If some changes like addition of one more parameter in one of the functions be done then the major changes from 19 to 20.
+//When the major changes it will be like 20.0.0 (major and minor become 0).
 //"^" is carat. If carat is present in first, it means that it will accept all the upcoming changes or updates.
+//If the carat is not present then it won't accept any changes. It will stay in its current state. 
