@@ -19,4 +19,18 @@
 //If some changes like addition of one more parameter in one of the functions be done then the major changes from 19 to 20.
 //When the major changes it will be like 20.0.0 (major and minor become 0).
 //"^" is carat. If carat is present in first, it means that it will accept all the upcoming changes or updates.
-//If the carat is not present then it won't accept any changes. It will stay in its current state. 
+//If the carat is not present then it won't accept any changes. It will stay in its current state.
+
+//Even though node modules mai React and React Dom present hai but yaha direct use nahi kar sakte becuse it won't understand that.
+//So we have import them here.
+
+//package-lock.json mai jake uske script mai "dev":"vite" and "build":"vite build" krne ke baad terminal mai pehle npm???????/ run dev then npx run build karne se it will make files which will contain all the necessary codes.
+//It will be compressed and smaller in size.
+//Sidhe server pe deploy karmne layak ho jayega.
+
+import React from "react";
+import ReactDOM from "react-dom/client";
+
+const element = <h1>Hello! Coder Army</h1>
+
+ReactDOM.createRoot(document.getElementById("root")).render(element);
