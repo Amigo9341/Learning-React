@@ -4,6 +4,8 @@ export default function App(){
 
   function increaseCount(){
     count++;
+    const para = document.querySelector("p");
+    para.textContent = `Counter : ${count}`
   }
 
   return(
