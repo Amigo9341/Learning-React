@@ -18,7 +18,9 @@ function App() {
     <h1>Github Users</h1>
     <div style={{display:"flex", justifyContent:"center", alignItems:"center", flexWrap:"wrap"}}>
       {
-        
+        user.map(Aman()=> (
+          <img src={Aman.avatar_url} height={"100px"} width={"100px"} 
+        ))
 
       }
       </div>
