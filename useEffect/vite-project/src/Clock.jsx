@@ -9,7 +9,7 @@ function Clock(){
         setTime(new Date().toLocaleTimeString());
         console.log("Hii");         
     },1000)
-})
+},[])
 
     return (
         <>
